@@ -16,6 +16,11 @@
   "author": "Joshua Jensch",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.4",
     "mongoose": "^4.11.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
   }
 }
