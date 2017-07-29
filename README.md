@@ -11,6 +11,50 @@ constraints:
 - string pattern
 - integer bounds
 
+# Usage
+
+```javascript
+const transform = require('json-schema-transform-mongoose');
+const mongoose = require('mongoose');
+const {expect} = require('chai');
+
+var definition = transform({
+  type: 'object',
+  properties: {
+    name: {
+      type: 'string',
+      minLength: 3
+    },
+    count: {
+      type: 'integer',
+      minimum: 0,
+      maximum: 10
+    },
+    numbers: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          a: {type:'string', pattern:'[0-9]{3}'},
+          b: {type: 'integer'}
+        }
+      }
+    }
+  }
+});
+
+expect(definition).to.deep.equal({
+  name: {type: String, minlength: 3},
+  count:{type: Number, min: 0, max:10},
+  numbers: [{type: {
+    type: {
+      a: {type: String, match: /[0-9]{3}/},
+      b: {type: Number}
+    }
+  }}]
+});
+```
+
 # Contributing
 ## By means of code
 
