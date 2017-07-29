@@ -12,9 +12,9 @@ Currently there is no support for constraints except the required flag in object
 
 Just fork the repo, make a new branch from the dev branch called something like 'feature-whateveryourdoing', do your thing and put up a pull request.
 
-## Buy means of coffe
+## Buy means of coffee
 
-[![Buy me a coffe](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X9BYDU543GWZE)
+[![Buy me a coffee](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X9BYDU543GWZE)
 
 ## Bye other means
 
