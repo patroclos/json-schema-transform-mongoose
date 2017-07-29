@@ -46,12 +46,12 @@ var definition = transform({
 expect(definition).to.deep.equal({
   name: {type: String, minlength: 3},
   count:{type: Number, min: 0, max:10},
-  numbers: [{type: {
+  numbers: [{
     type: {
       a: {type: String, match: /[0-9]{3}/},
       b: {type: Number}
     }
-  }}]
+  }]
 });
 ```
 
