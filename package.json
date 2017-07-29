@@ -1,0 +1,21 @@
+{
+  "name": "json-schema-transform-mongoose",
+  "version": "1.0.0",
+  "description": "converts json-schema to mongoose schemas and models",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "json",
+    "json-schema",
+    "mongodb",
+    "mongoose",
+    "transformer"
+  ],
+  "author": "Joshua Jensch",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^4.11.4"
+  }
+}
