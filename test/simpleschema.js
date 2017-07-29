@@ -23,6 +23,42 @@ describe('primitives', () => {
   });
 });
 
+describe('constraints', () => {
+  it('patterns', () => {
+    const out = transform({ type: 'string', pattern: 'patternValue' });
+    expect(out).deep.equal({ type: String, match: /patternValue/ });
+  });
+
+  it('enums', () => {
+    const out = transform({ type: 'string', enum: ['a', 'b', 'c'] });
+    expect(out).deep.equal({ type: String, enum: ['a', 'b', 'c'] });
+  });
+
+  it('number bounds', () => {
+    expect(transform({
+      type: 'integer',
+      minimum: 0,
+      maximum: 100,
+    })).deep.equal({
+      type: Number,
+      min: 0,
+      max: 100,
+    });
+  });
+
+  it('string length bounds', () => {
+    expect(transform({
+      type: 'string',
+      minLength: 0,
+      maxLength: 32,
+    })).deep.equal({
+      type: String,
+      minlength: 0,
+      maxlength: 32,
+    });
+  });
+});
+
 describe('shallow objects and arrays', () => {
   it('transforms string array', () => {
     const jschema = {

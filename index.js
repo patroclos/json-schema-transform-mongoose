@@ -27,17 +27,45 @@ function transformObject(objectSchema) {
   return rv;
 }
 
-// TODO type specifics
+// TODO type specifics enum, pattern matching etc
 function transformString(schema) {
-  return { type: String };
+  const rv = { type: String };
+
+  if (typeof schema.pattern !== 'undefined') {
+    rv.match = new RegExp(schema.pattern);
+  }
+
+  if (typeof schema.enum !== 'undefined') {
+    rv.enum = schema.enum;
+  }
+
+  if (typeof schema.minLength !== 'undefined') {
+    rv.minlength = schema.minLength;
+  }
+
+  if (typeof schema.maxLength !== 'undefined') {
+    rv.maxlength = schema.maxLength;
+  }
+
+  return rv;
 }
 
-// TODO type specifics
+// TODO type specifics min,max
 function transformInteger(schema) {
-  return { type: Number };
+  const rv = { type: Number };
+
+  if (typeof schema.minimum !== 'undefined') {
+    rv.min = schema.minimum;
+  }
+
+  if (typeof schema.maximum !== 'undefined') {
+    rv.max = schema.maximum;
+  }
+
+  return rv;
 }
 
-// TODO type specifics
+// TODO type specifics min,max
 function transformArray(schema) {
   return { type: [transform(schema.items || { type: Object })] };
 }
