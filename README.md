@@ -5,7 +5,11 @@ This project is part of a framework I am currently developing with emphasis on t
 # What works
 (partially) supported types: string, integer, array, object
 
-Currently there is no support for constraints except the required flag in objects
+constraints:
+- string length
+- enum
+- string pattern
+- integer bounds
 
 # Contributing
 ## By means of code
